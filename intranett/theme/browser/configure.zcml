@@ -1,10 +1,8 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:cache="http://namespaces.zope.org/cache"
     i18n_domain="intranett">
 
-  <include package="plone.app.caching" />
   <include package="plone.app.contentmenu" />
 
   <interface
@@ -75,57 +73,6 @@
       template="templates/collapsible_contentviews.pt"
       layer=".interfaces.IThemeSpecific"
       permission="zope2.View"
-      />
-
-  <!-- Frontpage -->
-  <browser:page
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".frontpage.FrontPageView"
-      name="frontpage_view"
-      template="templates/frontpage_view.pt"
-      permission="zope2.View"
-      />
-
-  <cache:rulesetType
-      name="intranett.frontpage"
-      title="Intranett frontpage "
-      description=""
-      />
-
-  <cache:ruleset
-      for=".frontpage.FrontPageView"
-      ruleset="intranett.frontpage"
-      />
-
-  <browser:menuItem
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      menu="plone_displayviews"
-      title="Frontpage view"
-      action="frontpage_view"
-      description="Frontpage view for intranets."
-      />
-
-  <browser:page
-      name="manage-frontpage"
-      for="plone.portlets.interfaces.ILocalPortletAssignable"
-      class=".manage.IntranettManageContextualPortlets"
-      permission="plone.app.portlets.ManagePortlets"
-      layer=".interfaces.IThemeSpecific"
-      template="templates/manage-frontpage.pt"
-      />
-
-  <!-- User / author page -->
-  <browser:page
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      name="user"
-      class=".user.UserView"
-      template="templates/user.pt"
-      permission="zope2.View"
-      />
-
-  <cache:ruleset
-      for=".user.UserView"
-      ruleset="plone.content.folderView"
       />
 
 </configure>
