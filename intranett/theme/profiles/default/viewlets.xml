@@ -28,4 +28,8 @@
     <hidden manager="plone.belowcontenttitle" skinname="Intranett.no base theme">
       <viewlet name="plone.belowcontenttitle.documentbyline" />
     </hidden>
+    <hidden manager="plone.portalfooter" skinname="Intranett.no base theme">
+      <viewlet name="plone.colophon" />
+      <viewlet name="plone.footer" />      
+    </hidden>    
 </object>
