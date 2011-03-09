@@ -2003,10 +2003,12 @@ body > footer a {
 /* @group Colophon */
 #portal-footer {
   margin-left: 1em;
+  font-size: 0.76em;
 }
 #portal-colophon {
   width: 97.9167%;
   padding: 0;
+  font-size: 0.76em;
 }
 #portal-colophon ul {
   margin-left: 1em;
